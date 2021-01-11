@@ -1,6 +1,6 @@
 def call() {
     
-    def props = readProperties  file:'/var/lib/jenkins/jobs/abc/test.properties'
+    def props = readProperties  file:'test.properties'
     def Var1= props['Monday']
     def Var2= props['Tuesday']
     echo "Var1=${Var1}"
