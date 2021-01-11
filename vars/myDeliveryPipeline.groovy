@@ -4,12 +4,12 @@ def call() {
         stages{
             stage('Checkout'){
                 steps{
-                    bat 'echo "checkout"'
+                    git 'https://github.com/nbodhe/SampleWebApplication.git'
                 }
             }
             stage('Build'){
                 steps{
-                    bat 'echo "Build"'
+                    bat 'dir'
                 }
             }
         }
