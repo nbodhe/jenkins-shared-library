@@ -8,7 +8,7 @@ def call() {
                 }
             }
             stage('Build'){
-                stpes{
+                steps{
                     bat 'echo "Build"'
                 }
             }
