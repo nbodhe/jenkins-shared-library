@@ -7,7 +7,22 @@ def call() {
                     git 'https://github.com/nbodhe/SampleWebApplication.git'
                 }
             }
-            stage('Build'){
+            stage('Clean'){
+                steps{
+                    bat 'mvn clean'
+                }
+            }
+            stage('Test'){
+                steps{
+                    bat 'mvn test'
+                }
+            }
+            stage('Install'){
+                steps{
+                    bat 'mvn install'
+                }
+            }
+            stage('Install'){
                 steps{
                     bat 'dir'
                 }
