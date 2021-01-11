@@ -1,12 +1,4 @@
 def call() {
-    
-    node{
-      def props = readProperties  file:'/test.properties'
-      def Var1= props['Monday']
-      def Var2= props['Tuesday']
-      echo "Var1=${Var1}"
-      echo "Var2=${Var2}" 
-    }
  
     pipeline{
         agent any
@@ -34,6 +26,18 @@ def call() {
             stage('ListDir'){
                 steps{
                     bat 'dir'
+                }
+            }
+            stage('PrintProperty'){
+                steps{
+                    
+                    script{
+                          def props = readProperties  file:'test.properties'
+                          def Var1= props['Monday']
+                          def Var2= props['Tuesday']
+                          echo "Var1=${Var1}"
+                          echo "Var2=${Var2}"
+                    }
                 }
             }
         }
