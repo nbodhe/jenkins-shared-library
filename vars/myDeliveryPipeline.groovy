@@ -22,7 +22,7 @@ def call() {
                     bat 'mvn install'
                 }
             }
-            stage('Install'){
+            stage('ListDir'){
                 steps{
                     bat 'dir'
                 }
