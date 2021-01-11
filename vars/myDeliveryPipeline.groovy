@@ -32,11 +32,13 @@ def call() {
             }
             stage('PrintProperty'){
                 steps{
-                    def props = readProperties  file:'test.properties'
-                    def Var1= props['Monday']
-                    def Var2= props['Tuesday']
-                    echo "Var1=${Var1}"
-                    echo "Var2=${Var2}"   
+                    script{
+                        def props = readProperties  file:'test.properties'
+                        def Var1= props['Monday']
+                        def Var2= props['Tuesday']
+                        echo "Var1=${Var1}"
+                        echo "Var2=${Var2}"  
+                    }
                 }
             }
         }
