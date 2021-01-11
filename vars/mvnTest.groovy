@@ -1,3 +1,3 @@
-def call(Map stageParams) {
+def call() {
       echo "hello world"
   }
