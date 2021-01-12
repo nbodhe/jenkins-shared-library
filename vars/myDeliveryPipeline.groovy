@@ -32,11 +32,15 @@ def call() {
                 steps{
                     
                     script{
-                          def props = readProperties  file:'test.properties'
-                          def Var1= props['Monday']
-                          def Var2= props['Tuesday']
-                          echo "Var1=${Var1}"
-                          echo "Var2=${Var2}"
+                          def props = readProperties  file:'jenkins.properties'
+                          def sonar= props['sonar']
+                          def nexus= props['nexus']
+                          def veracode= props['veracode']
+                          def ada= props['ada']
+                          echo "sonar=${sonar}"
+                          echo "nexus=${nexus}"
+                          echo "veracode=${veracode}"
+                          echo "ada=${ada}"
                     }
                 }
             }
